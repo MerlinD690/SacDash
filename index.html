@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Dashboard de Atendimento - Lavanderia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            padding: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #eafaf1;
+        }
+        .highlight {
+            background-color: #fff3cd !important;
+            font-weight: bold;
+        }
+        .highlight-max {
+            background-color: #f8d7da !important; /* fundo vermelho claro */
+            color: #721c24; /* texto vermelho escuro */
+            font-weight: bold;
+        }
+        .btn {
+            padding: 6px 12px;
+            margin: 2px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+        }
+        .btn:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dashboard de Atendimento - Lavanderia</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Atendente</th>
+                <th>Último Atendimento</th>
+                <th>Clientes Ativos</th>
+                <th>Pode Puxar?</th>
+                <th>Ordem Sugerida</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tbody-atendentes">
+            <tr>
+                <td>Beatriz</td>
+                <td data-ultimo="2025-07-25T19:33:00">25/07/2025, 19:33:00</td>
+                <td class="clientes-ativos">0</td>
+                <td class="pode-puxar">Não</td>
+                <td class="ordem-sugerida"></td>
+                <td>
+                    <button class="btn btn-add">+1 Cliente</button>
+                    <button class="btn btn-subtract" disabled>-1 Cliente</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Valquiria</td>
+                <td data-ultimo="2025-07-25T19:34:00">25/07/2025, 19:34:00</td>
+                <td class="clientes-ativos">0</td>
+                <td class="pode-puxar">Não</td>
+                <td class="ordem-sugerida"></td>
+                <td>
+                    <button class="btn btn-add">+1 Cliente</button>
+                    <button class="btn btn-subtract" disabled>-1 Cliente</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Larissa</td>
+                <td data-ultimo="2025-07-25T19:35:00">25/07/2025, 19:35:00</td>
+                <td class="clientes-ativos">0</td>
+                <td class="pode-puxar">Não</td>
+                <td class="ordem-sugerida"></td>
+                <td>
+                    <button class="btn btn-add">+1 Cliente</button>
+                    <button class="btn btn-subtract" disabled>-1 Cliente</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Sophia</td>
+                <td data-ultimo="2025-07-25T19:36:00">25/07/2025, 19:36:00</td>
+                <td class="clientes-ativos">0</td>
+                <td class="pode-puxar">Não</td>
+                <td class="ordem-sugerida"></td>
+                <td>
+                    <button class="btn btn-add">+1 Cliente</button>
+                    <button class="btn btn-subtract" disabled>-1 Cliente</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Lays</td>
+                <td data-ultimo="2025-07-25T19:37:00">25/07/2025, 19:37:00</td>
+                <td class="clientes-ativos">0</td>
+                <td class="pode-puxar">Não</td>
+                <td class="ordem-sugerida"></td>
+                <td>
+                    <button class="btn btn-add">+1 Cliente</button>
+                    <button class="btn btn-subtract" disabled>-1 Cliente</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Flaviane</td>
+                <td data-ultimo="2025-07-25T19:38:00">25/07/2025, 19:38:00</td>
+                <td class="clientes-ativos">0</td>
+                <td class="pode-puxar">Não</td>
+                <td class="ordem-sugerida"></td>
+                <td>
+                    <button class="btn btn-add">+1 Cliente</button>
+                    <button class="btn btn-subtract" disabled>-1 Cliente</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Juliana</td>
+                <td data-ultimo="2025-07-25T19:40:00">25/07/2025, 19:40:00</td>
+                <td class="clientes-ativos">0</td>
+                <td class="pode-puxar">Não</td>
+                <td class="ordem-sugerida"></td>
+                <td>
+                    <button class="btn btn-add">+1 Cliente</button>
+                    <button class="btn btn-subtract" disabled>-1 Cliente</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Laura</td>
+                <td data-ultimo="2025-07-25T19:42:00">25/07/2025, 19:42:00</td>
+                <td class="clientes-ativos">0</td>
+                <td class="pode-puxar">Não</td>
+                <td class="ordem-sugerida"></td>
+                <td>
+                    <button class="btn btn-add">+1 Cliente</button>
+                    <button class="btn btn-subtract" disabled>-1 Cliente</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Camila</td>
+                <td data-ultimo="2025-07-25T19:43:00">25/07/2025, 19:43:00</td>
+                <td class="clientes-ativos">0</td>
+                <td class="pode-puxar">Não</td>
+                <td class="ordem-sugerida"></td>
+                <td>
+                    <button class="btn btn-add">+1 Cliente</button>
+                    <button class="btn btn-subtract" disabled>-1 Cliente</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Giovanna</td>
+                <td data-ultimo="2025-07-26T00:06:08">26/07/2025, 00:06:08</td>
+                <td class="clientes-ativos">0</td>
+                <td class="pode-puxar">Não</td>
+                <td class="ordem-sugerida"></td>
+                <td>
+                    <button class="btn btn-add">+1 Cliente</button>
+                    <button class="btn btn-subtract" disabled>-1 Cliente</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const MAX_CLIENTES = 5;
+
+        // Função beep simples
+        function beep() {
+            const context = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = context.createOscillator();
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(1000, context.currentTime);
+            oscillator.connect(context.destination);
+            oscillator.start();
+            oscillator.stop(context.currentTime + 0.2);
+        }
+
+        // Atualiza a prioridade e estado da tabela
+        function atualizarPrioridade() {
+            const tbody = document.getElementById('tbody-atendentes');
+            const linhas = Array.from(tbody.querySelectorAll('tr'));
+
+            // Mapeia os dados de cada atendente
+            let atendentes = linhas.map(linha => {
+                const nome = linha.children[0].textContent.trim();
+                const ultimoAtendimentoStr = linha.children[1].getAttribute('data-ultimo');
+                const ultimoAtendimento = new Date(ultimoAtendimentoStr);
+                const clientesAtivos = parseInt(linha.querySelector('.clientes-ativos').textContent);
+                return { linha, nome, ultimoAtendimento, clientesAtivos };
+            });
+
+            // Ordena pela regra: clientesAtivos ASC, ultimoAtendimento ASC (mais antigo primeiro)
+            atendentes.sort((a, b) => {
+                if (a.clientesAtivos !== b.clientesAtivos) {
+                    return a.clientesAtivos - b.clientesAtivos;
+                } else {
+                    return a.ultimoAtendimento - b.ultimoAtendimento;
+                }
+            });
+
+            // Atualiza coluna "Pode Puxar?" e "Ordem Sugerida"
+            atendentes.forEach((atendente, index) => {
+                const podePuxarCell = atendente.linha.querySelector('.pode-puxar');
+                const ordemCell = atendente.linha.querySelector('.ordem-sugerida');
+                const btnAdd = atendente.linha.querySelector('.btn-add');
+                const btnSub = atendente.linha.querySelector('.btn-subtract');
+
+                // Remove classes antigas
+                atendente.linha.classList.remove('highlight', 'highlight-max');
+
+                if (atendente.clientesAtivos >= MAX_CLIENTES) {
+                    // Se tem 5 clientes ativos, destaca em vermelho
+                    atendente.linha.classList.add('highlight-max');
+                    podePuxarCell.textContent = 'Não';
+                    btnAdd.disabled = true;
+                } else if (index === 0 && atendente.clientesAtivos < MAX_CLIENTES) {
+                    // Primeiro da lista que pode puxar
+                    podePuxarCell.textContent = 'Sim';
+                    atendente.linha.classList.add('highlight');
+                    beep();
+                    btnAdd.disabled = false;
+                } else {
+                    podePuxarCell.textContent = 'Não';
+                    btnAdd.disabled = atendente.clientesAtivos >= MAX_CLIENTES;
+                }
+
+                // Desabilita botão -1 quando não tem cliente ativo
+                btnSub.disabled = atendente.clientesAtivos === 0;
+
+                ordemCell.textContent = index + 1;
+            });
+        }
+
+        // Adiciona eventos para os botões + e - clientes
+        function configurarBotoes() {
+            const tbody = document.getElementById('tbody-atendentes');
+            tbody.querySelectorAll('.btn-add').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const linha = btn.closest('tr');
+                    const clientesCell = linha.querySelector('.clientes-ativos');
+                    let clientes = parseInt(clientesCell.textContent);
+
+                    if (clientes < MAX_CLIENTES) {
+                        clientesCell.textContent = clientes + 1;
+
+                        // Atualiza a data do último atendimento para "agora"
+                        const dataCell = linha.children[1];
+                        const agoraISO = new Date().toISOString();
+                        dataCell.setAttribute('data-ultimo', agoraISO);
+
+                        // Atualiza a visualização da data para formato dd/mm/aaaa hh:mm:ss
+                        const agora = new Date();
+                        const formatoBR = agora.toLocaleString('pt-BR', { hour12: false });
+                        dataCell.textContent = formatoBR;
+
+                        atualizarPrioridade();
+                    }
+                });
+            });
+
+            tbody.querySelectorAll('.btn-subtract').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const linha = btn.closest('tr');
+                    const clientesCell = linha.querySelector('.clientes-ativos');
+                    let clientes = parseInt(clientesCell.textContent);
+
+                    if (clientes > 0) {
+                        clientesCell.textContent = clientes - 1;
+                        atualizarPrioridade();
+                    }
+                });
+            });
+        }
+
+        window.addEventListener('load', () => {
+            configurarBotoes();
+            atualizarPrioridade();
+        });
+    </script>
+</body>
+</html>
